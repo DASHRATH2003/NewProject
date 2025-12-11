@@ -127,11 +127,9 @@ const PremiumServices = () => {
     },
   ];
 
-  const handlePayment = (serviceId, plan) => {
+  const handlePayment = (serviceId, plan, amountOverride) => {
     const service = services.find((s) => s.id === serviceId);
-    const amount = plan === "monthly" ? service.monthly : service.quarterly;
-
-    // Redirect to payment page with service details
+    const amount = amountOverride ?? (plan === "monthly" ? service?.monthly : service?.quarterly);
     window.location.href = `/payment?service=${serviceId}&plan=${plan}&amount=${amount}`;
   };
 
@@ -188,14 +186,14 @@ const PremiumServices = () => {
                 <div class="mb-4">
                   <div class="text-sm text-gray-600 mb-1">Monthly</div>
                   <div class="text-2xl font-bold text-gray-900">₹14,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors" onClick={() => handlePayment('premium-trading','monthly',14999)}>
                     Buy Premium
                   </button>
                 </div>
                 <div>
                   <div class="text-sm text-gray-600 mb-1">Quarterly</div>
                   <div class="text-2xl font-bold text-gray-900">₹29,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors" onClick={() => handlePayment('premium-trading','quarterly',29999)}>
                     Buy Premium
                   </button>
                 </div>
@@ -336,14 +334,14 @@ const PremiumServices = () => {
                 <div class="mb-4">
                   <div class="text-sm text-gray-600 mb-1">Monthly</div>
                   <div class="text-2xl font-bold text-gray-900">₹19,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors" onClick={() => handlePayment('wealth-management','monthly',19999)}>
                     Buy Premium
                   </button>
                 </div>
                 <div>
                   <div class="text-sm text-gray-600 mb-1">Quarterly</div>
                   <div class="text-2xl font-bold text-gray-900">₹44,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors" onClick={() => handlePayment('wealth-management','quarterly',44999)}>
                     Buy Premium
                   </button>
                 </div>
@@ -485,14 +483,14 @@ const PremiumServices = () => {
                 <div class="mb-4">
                   <div class="text-sm text-gray-600 mb-1">Monthly</div>
                   <div class="text-2xl font-bold text-gray-900">₹24,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors" onClick={() => handlePayment('personal-advisory','monthly',24999)}>
                     Buy Premium
                   </button>
                 </div>
                 <div>
                   <div class="text-sm text-gray-600 mb-1">Quarterly</div>
                   <div class="text-2xl font-bold text-gray-900">₹59,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors" onClick={() => handlePayment('personal-advisory','quarterly',59999)}>
                     Buy Premium
                   </button>
                 </div>
@@ -633,14 +631,14 @@ const PremiumServices = () => {
                 <div class="mb-4">
                   <div class="text-sm text-gray-600 mb-1">Monthly</div>
                   <div class="text-2xl font-bold text-gray-900">₹14,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors" onClick={() => handlePayment('tax-planning','monthly',14999)}>
                     Buy Premium
                   </button>
                 </div>
                 <div>
                   <div class="text-sm text-gray-600 mb-1">Quarterly</div>
                   <div class="text-2xl font-bold text-gray-900">₹39,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors" onClick={() => handlePayment('tax-planning','quarterly',39999)}>
                     Buy Premium
                   </button>
                 </div>
@@ -783,14 +781,14 @@ const PremiumServices = () => {
                 <div class="mb-4">
                   <div class="text-sm text-gray-600 mb-1">Monthly</div>
                   <div class="text-2xl font-bold text-gray-900">₹19,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors" onClick={() => handlePayment('mcx-bullions-premium','monthly',19999)}>
                     Buy Premium
                   </button>
                 </div>
                 <div>
                   <div class="text-sm text-gray-600 mb-1">Quarterly</div>
                   <div class="text-2xl font-bold text-gray-900">₹49,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors" onClick={() => handlePayment('mcx-bullions-premium','quarterly',49999)}>
                     Buy Premium
                   </button>
                 </div>
@@ -931,14 +929,14 @@ const PremiumServices = () => {
                 <div class="mb-4">
                   <div class="text-sm text-gray-600 mb-1">Monthly</div>
                   <div class="text-2xl font-bold text-gray-900">₹24,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors" onClick={() => handlePayment('mcx-basemetal-premium','monthly',14999)}>
                     Buy Premium
                   </button>
                 </div>
                 <div>
                   <div class="text-sm text-gray-600 mb-1">Quarterly</div>
                   <div class="text-2xl font-bold text-gray-900">₹49,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors" onClick={() => handlePayment('mcx-basemetal-premium','quarterly',34999)}>
                     Buy Premium
                   </button>
                 </div>
@@ -1079,14 +1077,14 @@ const PremiumServices = () => {
                 <div class="mb-4">
                   <div class="text-sm text-gray-600 mb-1">Monthly</div>
                   <div class="text-2xl font-bold text-gray-900">₹14,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-teal-600 hover:to-cyan-600 transition-colors" onClick={() => handlePayment('mcx-energy-premium','monthly',14999)}>
                     Buy Premium
                   </button>
                 </div>
                 <div>
                   <div class="text-sm text-gray-600 mb-1">Quarterly</div>
                   <div class="text-2xl font-bold text-gray-900">₹34,999/-</div>
-                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors">
+                  <button class="w-full mt-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-600 hover:to-teal-600 transition-colors" onClick={() => handlePayment('mcx-energy-premium','quarterly',34999)}>
                     Buy Premium
                   </button>
                 </div>
