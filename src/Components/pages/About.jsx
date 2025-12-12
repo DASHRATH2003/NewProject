@@ -83,7 +83,7 @@ const About = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-500/30 mb-6">
             <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2 animate-pulse"></span>
-            <span className="text-emerald-400 text-sm font-medium">Since 2003</span>
+            <span className="text-emerald-400 text-sm font-medium">Since 2025</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
@@ -127,7 +127,7 @@ const About = () => {
                 <div className="flex items-start">
                   <CheckCircle className="w-6 h-6 text-emerald-500 mr-3 mt-1 flex-shrink-0" />
                   <p className="text-gray-700">
-                    Backed by 20+ years of market expertise and industry experience
+                    Backed by 10+ years of market expertise and industry experience
                   </p>
                 </div>
                 <div className="flex items-start">
@@ -148,7 +148,7 @@ const About = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="text-white font-bold text-lg">Serving 50,000+ Happy Clients</div>
+                  <div className="text-white font-bold text-lg">Serving 20,000+ Happy Clients</div>
                   <div className="text-emerald-300">Across India & Global Markets</div>
                 </div>
               </div>
@@ -272,9 +272,9 @@ const About = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { value: "50,000+", label: "Happy Clients", icon: Users },
-              { value: "20+", label: "Years Experience", icon: Clock },
-              { value: "₹200Cr+", label: "Assets Managed", icon: DollarSign },
+              { value: "20,000+", label: "Happy Clients", icon: Users },
+              { value: "10+", label: "Years Experience", icon: Clock },
+              { value: "₹20Cr+", label: "Assets Managed", icon: DollarSign },
               { value: "95%", label: "Success Rate", icon: TrendingUp }
             ].map((stat, index) => (
               <div 

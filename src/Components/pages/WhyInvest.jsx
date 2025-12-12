@@ -117,8 +117,8 @@ const WhyInvest = () => {
             {[
               { value: "98%", label: "Success Rate", icon: Award, color: "from-emerald-500 to-emerald-400" },
               { value: "10K+", label: "Happy Clients", icon: Users, color: "from-blue-500 to-blue-400" },
-              { value: "₹200Cr+", label: "Assets Managed", icon: DollarSign, color: "from-emerald-500 to-emerald-400" },
-              { value: "15+", label: "Years Experience", icon: Clock, color: "from-blue-500 to-blue-400" }
+              { value: "₹20Cr+", label: "Assets Managed", icon: DollarSign, color: "from-emerald-500 to-emerald-400" },
+              { value: "10+", label: "Years Experience", icon: Clock, color: "from-blue-500 to-blue-400" }
             ].map((stat, index) => (
               <div 
                 key={index}
