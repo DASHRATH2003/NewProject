@@ -154,7 +154,7 @@ const Terms = () => {
                     </div>
 
                     {/* 4. Investment Risks and Disclaimers */}
-                    <div id="risks" className="scroll-mt-24">
+                    <div id="refund" className="scroll-mt-24">
                       <div className="flex items-start space-x-4 mb-6">
                         <div className="flex-shrink-0 w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center">
                           <span className="text-red-600 font-bold text-xl">4</span>
@@ -195,7 +195,7 @@ const Terms = () => {
                     </div>
 
                     {/* 5. Limitation of Liability */}
-                    <div id="liability" className="scroll-mt-24">
+                    <div id="returns" className="scroll-mt-24">
                       <div className="flex items-start space-x-4 mb-6">
                         <div className="flex-shrink-0 w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center">
                           <span className="text-purple-600 font-bold text-xl">5</span>
@@ -305,27 +305,26 @@ const Terms = () => {
                       </div>
                     </div>
 
-                    {/* 11. Governing Law */}
+                    {/* 12. Governing Law */}
                     <div id="law" className="scroll-mt-24">
                       <div className="flex items-start space-x-4 mb-6">
                         <div className="flex-shrink-0 w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center">
-                          <span className="text-gray-600 font-bold text-xl">11</span>
+                          <span className="text-gray-600 font-bold text-xl">12</span>
                         </div>
                         <div>
                           <h2 className="text-2xl font-bold text-gray-900 mb-3">Governing Law</h2>
                           <p className="text-gray-700 leading-relaxed">
-                            These terms shall be governed by and construed in accordance with the laws of India. 
-                            Any disputes arising from these terms shall be subject to the jurisdiction of courts in Bangalore, India.
+                            Above Terms &amp; Conditions shall be governed and construed in accordance with the Indian laws and any disputes arising under these Terms &amp; Conditions shall be subject to the Jurisdiction of Bangalore only.
                           </p>
                         </div>
                       </div>
                     </div>
 
-                    {/* 12. Contact Information */}
+                    {/* 13. Contact Information */}
                     <div id="contact" className="scroll-mt-24">
                       <div className="flex items-start space-x-4 mb-6">
                         <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-100 to-emerald-100 rounded-xl flex items-center justify-center">
-                          <span className="text-gray-700 font-bold text-xl">12</span>
+                          <span className="text-gray-700 font-bold text-xl">13</span>
                         </div>
                         <div>
                           <h2 className="text-2xl font-bold text-gray-900 mb-3">Contact Information</h2>
@@ -341,7 +340,7 @@ const Terms = () => {
                                 </svg>
                                 <div>
                                   <p className="text-sm text-gray-600">Email</p>
-                                  <p className="text-gray-900 font-medium">legal@tradesmart.com</p>
+                                  <p className="text-gray-900 font-medium">Support@tradesmartly.co.in</p>
                                 </div>
                               </div>
                               <div className="flex items-center">
@@ -350,7 +349,7 @@ const Terms = () => {
                                 </svg>
                                 <div>
                                   <p className="text-sm text-gray-600">Phone</p>
-                                  <p className="text-gray-900 font-medium">+91-1800-123-4567</p>
+                                  <p className="text-gray-900 font-medium">+91 9591408655</p>
                                 </div>
                               </div>
                               <div className="md:col-span-2">
@@ -360,7 +359,7 @@ const Terms = () => {
                                   </svg>
                                   <div>
                                     <p className="text-sm text-gray-600">Address</p>
-                                    <p className="text-gray-900 font-medium">TradeSmart Technologies Pvt. Ltd., Bangalore, India</p>
+                                    <p className="text-gray-900 font-medium">BANASWADI, BANGALORE  KARNATAKA 560043 INDIA</p>
                                   </div>
                                 </div>
                               </div>
@@ -381,20 +380,7 @@ const Terms = () => {
                       </p>
                     </div>
 
-                    <div className="p-6 bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl border border-yellow-200">
-                      <div className="flex items-start">
-                        <svg className="w-6 h-6 text-yellow-600 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        <div>
-                          <p className="text-sm text-yellow-800 font-semibold mb-1">SEBI Registration</p>
-                          <p className="text-sm text-yellow-700">
-                            TradeSmart is registered with the Securities and Exchange Board of India (SEBI) 
-                            as an Investment Advisor. Registration No: INA000012345
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  
                   </div>
                 </div>
               </div>
@@ -402,8 +388,9 @@ const Terms = () => {
           </div>
         </div>
       </section>
-    </div>
-  )
-}
+      </div>
+  );
+};
 
-export default Terms
+export default Terms;
+

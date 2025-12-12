@@ -18,7 +18,7 @@ const Footer = () => {
                   className="w-36 h-16 object-contain"
                 />
                 <div>
-                  <div className="text-2xl font-bold text-white">TradeSmart</div>
+                  <div className="text-2xl font-bold text-white">TradeSmartly</div>
                   <div className="text-sm text-emerald-400 font-medium">Intelligent Trading Solutions</div>
                 </div>
               </div>
@@ -180,7 +180,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 <span className="text-emerald-400 font-semibold">TradeSmart</span>. All rights reserved.
+              © 2025 <span className="text-emerald-400 font-semibold">TradeSmartly</span>. All rights reserved.
             </div>
             <div className="flex items-center space-x-6 text-sm">
               <Link to="/terms" className="text-gray-400 hover:text-white transition-colors duration-300">

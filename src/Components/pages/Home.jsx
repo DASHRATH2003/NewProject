@@ -120,103 +120,7 @@ const Home = () => {
       </div>
 
       {/* Live Market Indices */}
-      <section className="py-6 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-start justify-between">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-600 mb-1">NIFTY 50</h3>
-                  <div className="text-2xl font-bold text-gray-900">
-                    ₹{marketData.nifty.price.toFixed(2)}
-                  </div>
-                </div>
-                <div className={`text-sm font-medium px-2 py-1 rounded-full ${
-                  marketData.nifty.change >= 0 
-                    ? 'bg-emerald-50 text-emerald-700' 
-                    : 'bg-red-50 text-red-700'
-                }`}>
-                  {marketData.nifty.change >= 0 ? '↗' : '↘'} {marketData.nifty.changePercent.toFixed(2)}%
-                </div>
-              </div>
-              <div className={`text-sm mt-2 font-medium ${
-                marketData.nifty.change >= 0 ? 'text-emerald-600' : 'text-red-600'
-              }`}>
-                {marketData.nifty.change >= 0 ? '+' : ''}{marketData.nifty.change.toFixed(2)}
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-start justify-between">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-600 mb-1">SENSEX</h3>
-                  <div className="text-2xl font-bold text-gray-900">
-                    ₹{marketData.sensex.price.toFixed(2)}
-                  </div>
-                </div>
-                <div className={`text-sm font-medium px-2 py-1 rounded-full ${
-                  marketData.sensex.change >= 0 
-                    ? 'bg-emerald-50 text-emerald-700' 
-                    : 'bg-red-50 text-red-700'
-                }`}>
-                  {marketData.sensex.change >= 0 ? '↗' : '↘'} {marketData.sensex.changePercent.toFixed(2)}%
-                </div>
-              </div>
-              <div className={`text-sm mt-2 font-medium ${
-                marketData.sensex.change >= 0 ? 'text-emerald-600' : 'text-red-600'
-              }`}>
-                {marketData.sensex.change >= 0 ? '+' : ''}{marketData.sensex.change.toFixed(2)}
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-start justify-between">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-600 mb-1">BANK NIFTY</h3>
-                  <div className="text-2xl font-bold text-gray-900">
-                    ₹{marketData.bankNifty.price.toFixed(2)}
-                  </div>
-                </div>
-                <div className={`text-sm font-medium px-2 py-1 rounded-full ${
-                  marketData.bankNifty.change >= 0 
-                    ? 'bg-emerald-50 text-emerald-700' 
-                    : 'bg-red-50 text-red-700'
-                }`}>
-                  {marketData.bankNifty.change >= 0 ? '↗' : '↘'} {marketData.bankNifty.changePercent.toFixed(2)}%
-                </div>
-              </div>
-              <div className={`text-sm mt-2 font-medium ${
-                marketData.bankNifty.change >= 0 ? 'text-emerald-600' : 'text-red-600'
-              }`}>
-                {marketData.bankNifty.change >= 0 ? '+' : ''}{marketData.bankNifty.change.toFixed(2)}
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-start justify-between">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-600 mb-1">GOLD</h3>
-                  <div className="text-2xl font-bold text-gray-900">
-                    ₹{marketData.goldPrice.price.toFixed(0)}
-                  </div>
-                </div>
-                <div className={`text-sm font-medium px-2 py-1 rounded-full ${
-                  marketData.goldPrice.change >= 0 
-                    ? 'bg-emerald-50 text-emerald-700' 
-                    : 'bg-red-50 text-red-700'
-                }`}>
-                  {marketData.goldPrice.change >= 0 ? '↗' : '↘'} {marketData.goldPrice.changePercent.toFixed(2)}%
-                </div>
-              </div>
-              <div className={`text-sm mt-2 font-medium ${
-                marketData.goldPrice.change >= 0 ? 'text-emerald-600' : 'text-red-600'
-              }`}>
-                {marketData.goldPrice.change >= 0 ? '+' : ''}{marketData.goldPrice.change.toFixed(0)}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
@@ -298,7 +202,7 @@ const Home = () => {
                 <div className="text-gray-400 text-sm">Round-the-clock assistance</div>
               </div>
               <div className="bg-gradient-to-br from-emerald-500/10 to-blue-500/10 backdrop-blur-sm border border-emerald-500/20 rounded-2xl p-6">
-                <div className="text-3xl font-bold text-white mb-2">20+</div>
+                <div className="text-3xl font-bold text-white mb-2">10+</div>
                 <div className="text-emerald-300 font-semibold mb-1">Years Experience</div>
                 <div className="text-gray-400 text-sm">Market expertise</div>
               </div>
@@ -482,7 +386,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Why Choose <span className="text-emerald-600">TradeSmart</span>?
+              Why Choose <span className="text-emerald-600">TradeSmartly</span>?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Experience the perfect blend of technology, expertise, and performance
@@ -564,7 +468,7 @@ const Home = () => {
               className="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-white text-emerald-600 font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-2xl"
             >
               <DollarSign className="mr-2 w-6 h-6" />
-              Start Trading Free
+              Start your free Trading
             </Link>
             <Link 
               to="/contact" 
