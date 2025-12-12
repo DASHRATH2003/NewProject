@@ -373,8 +373,8 @@ const WhyInvest = () => {
                   },
                   {
                     icon: Smartphone,
-                    title: "Mobile First",
-                    description: "Trade and monitor your investments anytime, anywhere with our mobile app"
+                    title: "Modern & Professional",
+                    description: "Trade smarter on the go with our powerful mobile app — invest anytime, anywhere."
                   }
                 ].map((tech, index) => (
                   <div 
