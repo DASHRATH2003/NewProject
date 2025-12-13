@@ -24,7 +24,7 @@ const BasicServices = () => {
       id: 'portfolio-management',
       title: 'STOCK FUTURES',
       description: 'Professional portfolio management for better returns',
-      monthly: 12999,
+      monthly: 14999,
       quarterly: 29999,
       features: [
         'Portfolio analysis',
