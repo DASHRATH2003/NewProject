@@ -314,6 +314,50 @@ const Support = () => {
                 >
                   Download PDF →
                 </button>
+                <div className="mt-4 space-y-2">
+                  <button
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = 'data:application/pdf;base64,JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PAovVGl0bGUgKFF1aWNrIFN0YXJ0IEd1aWRlKQovQ3JlYXRvciAoVHJhZGVTbWFydGx5KQovUHJvZHVjZXIgKFRyYWRlU21hcnQgUERGIFN0dWRpbykKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL1R5cGUgL0NhdGFsb2cKL1BhZ2VzIDMgMCBSCj4+CmVuZG9iagozIDAgb2JqCjw8Ci9UeXBlIC9QYWdlcwovS2lkcyBbNCAwIFJdCi9Db3VudCAxCj4+CmVuZG9iago0IDAgb2JqCjw8Ci9UeXBlIC9QYWdlCi9QYXJlbnQgMyAwIFIKL01lZGlhQm94IFswIDAgNjEyIDc5Ml0KL0NvbnRlbnRzIDUgMCBSCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9MZW5ndGggMTc3Cj4+CnN0cmVhbQpCVAovRjEgMTIgVGYKNTAgNzUwIFRkCihRdWljayBTdGFydCBHdWlkZSkgVGoKMCAtNTAgVGQKKFdlbGNvbWUgdG8gVHJhZGVTbWFydGx5ISkgVGoKMCAtMzAgVGQKKFN0YXJ0IHRyYWRpbmcteW91ciBhY2NvdW50LCBsb2dpbiwgZXhwbG9yZSBiYXNpYyB3b3JrZmxvd3MuKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA2CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAwOSAwMDAwMCBuIAowMDAwMDAwMTc0IDAwMDAwIG4gCjAwMDAwMDAyMjEgMDAwMDAgbiAKMDAwMDAwMDI3OCAwMDAwMCBuIAowMDAwMDAwMzkxIDAwMDAwIG4gCnRyYWlsZXIKPDwKL1NpemUgNgovUm9vdCAyIDAgUgo+PgpzdGFydHhyZWYKNjc5CiUlRU9G';
+                      link.download = 'Quick-Start-Guide.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                      alert('Quick Start Guide downloaded successfully!');
+                    }}
+                    className="block text-blue-300 hover:text-blue-200 text-sm font-medium"
+                  >
+                    Quick Start Guide →
+                  </button>
+                  <button
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = 'data:application/pdf;base64,JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PAovVGl0bGUgKFJpc2sgTWFuYWdlbWVudCBCYXNpY3MpCi9DcmVhdG9yIChUcmFkZVNtYXJ0bHkpCi9Qcm9kdWNlciAoVHJhZGVTbWFydCBQREYgU3R1ZGlvKQo+PgplbmRvYmoKMiAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMyAwIFIKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL1R5cGUgL1BhZ2VzCi9LaWRzIFs0IDAgUl0KL0NvdW50IDEKPD4KZW5kb2JqCjQgMCBvYmoKPDwKL1R5cGUgL1BhZ2UKL1BhcmVudCAzIDAgUgovTWVkaWFCb3ggWzAgMCA2MTIgNzkyXQovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCjUgMCBvYmoKPDwKL0xlbmd0aCAxOTYKPj4Kc3RyZWFtCkJUCi9GMSAxMiBUZgo1MCA3NTAgVGQKKFJpc2sgTWFuYWdlbWVudCBCYXNpY3MpIFRqCjAgLTUwIFRkCihVc2Ugc3RvcC1sb3NzLCBwcm9wZXIgc2l6aW5nLCBhbmQgZGl2ZXJzaWZpY2F0aW9uLikgVGoKMCAtMzAgVGQKKlNldCB0YXJnZXQgcmlzayBwZXIgdHJhZGUqIFRqCkVUCmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAxNzQgMDAwMDAgbiAKMDAwMDAwMDIyMSAwMDAwMCBuIAowMDAwMDAwMjc4IDAwMDAwIG4gCjAwMDAwMDAzODMgMDAwMDAgbiAKdHJhaWxlcgo8PAovU2l6ZSA2Ci9Sb290IDIgMCBSCj4+CnN0YXJ0eHJlZgo2NzYKJSVFT0Y=';
+                      link.download = 'Risk-Management-Basics.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                      alert('Risk Management Basics PDF downloaded successfully!');
+                    }}
+                    className="block text-blue-300 hover:text-blue-200 text-sm font-medium"
+                  >
+                    Risk Management Basics →
+                  </button>
+                  <button
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = 'data:application/pdf;base64,JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PAovVGl0bGUgKEZlZXMgJiBCcm9rZXJhZ2UgU2NoZWR1bGUpCi9DcmVhdG9yIChUcmFkZVNtYXJ0bHkpCi9Qcm9kdWNlciAoVHJhZGVTbWFydCBQREYgU3R1ZGlvKQo+PgplbmRvYmoKMiAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMyAwIFIKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL1R5cGUgL1BhZ2VzCi9LaWRzIFs0IDAgUl0KL0NvdW50IDEKPD4KZW5kb2JqCjQgMCBvYmoKPDwKL1R5cGUgL1BhZ2UKL1BhcmVudCAzIDAgUgovTWVkaWFCb3ggWzAgMCA2MTIgNzkyXQovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCjUgMCBvYmoKPDwKL0xlbmd0aCAyMDMKPj4Kc3RyZWFtCkJUCi9GMSAxMiBUZgo1MCA3NTAgVGQKKEZlZXMgJiBCcm9rZXJhZ2UgU2NoZWR1bGUpIFRqCjAgLTUwIFRkCihEZXRhaWxlZCBjaGFyZ2VzLCBicm9rZXJhZ2UgdHlwZXMsIGFuZCByZWd1bGF0aW9ucy4pIFRqCjAgLTMwIFRkCihFcXVpdHkgZGVsaXZlcnk6IOKCuCAyMCBvciAwLjA1JSB3aGljaGV2ZXIgaXMgTG93ZXIuKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA2CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAwOSAwMDAwMCBuIAowMDAwMDAwMTc0IDAwMDAwIG4gCjAwMDAwMDAyMjEgMDAwMDAgbiAKMDAwMDAwMDI3OCAwMDAwMCBuIAowMDAwMDAwNDA5IDAwMDAwIG4gCnRyYWlsZXIKPDwKL1NpemUgNgovUm9vdCAyIDAgUgo+PgpzdGFydHhyZWYKNjgzCiUlRU9G';
+                      link.download = 'Fees-and-Brokerage-Schedule.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                      alert('Fees & Brokerage Schedule downloaded successfully!');
+                    }}
+                    className="block text-blue-300 hover:text-blue-200 text-sm font-medium"
+                  >
+                    Fees & Brokerage Schedule →
+                  </button>
+                </div>
               </div>
 
               <div className="bg-slate-700/30 rounded-lg p-6">
