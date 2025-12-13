@@ -86,38 +86,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Live Market Data Ticker */}
-      <div className="bg-gray-900 py-2 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <span className="text-emerald-400 font-semibold text-sm flex items-center">
-                <TrendingUp className="w-4 h-4 mr-2" />
-                LIVE MARKETS
-              </span>
-              <div className="h-4 w-px bg-gray-700"></div>
-              <div className="overflow-hidden flex-1">
-                <div 
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${tickerPosition * 100}%)` }}
-                >
-                  {newsItems.map((item, index) => (
-                    <div 
-                      key={index} 
-                      className="flex-shrink-0 w-full"
-                    >
-                      <p className="text-white text-sm truncate">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="hidden md:flex items-center space-x-4">
-              <span className="text-gray-400 text-sm">Market Open</span>
-              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Live Market Indices */}
      
@@ -168,7 +137,7 @@ const Home = () => {
                   'Something for someone and everyone shall witness an enhancement in their wealth'
                 </p>
                 <p className="text-gray-400">
-                  Empowered by cutting-edge technology and 20+ years of market expertise
+                  Empowered by cutting-edge technology and 10+ years of market expertise
                 </p>
               </div>
 
