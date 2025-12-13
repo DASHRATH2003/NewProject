@@ -54,8 +54,8 @@ const BasicServices = () => {
       id: 'customer-support',
       title: 'INDEX FUTURES',
       description: 'Dedicated customer support for all your queries',
-      monthly: 19999,
-      quarterly: 25999,
+      monthly: 7999,
+      quarterly: 19999,
       features: [
         '24/7 chat support',
         'Phone support',
@@ -69,8 +69,8 @@ const BasicServices = () => {
       id: 'sip-investment',
       title: 'INDEX OPTIONS',
       description: 'Systematic Investment Plan guidance and management',
-      monthly: 12999,
-      quarterly: 23999,
+      monthly: 14999,
+      quarterly: 39999,
       features: [
         'SIP planning',
         'Mutual fund selection',
@@ -84,8 +84,8 @@ const BasicServices = () => {
       id: 'mcx-bullions',
       title: 'MCX BULLIONS',
       description: 'Gold and silver trading with expert guidance',
-      monthly: 14999,
-      quarterly: 45999,
+      monthly: 19999,
+      quarterly: 54999,
       features: [
         '2-3 recommendations daily',
         'Risk to reward ratio 1:2',
@@ -100,7 +100,7 @@ const BasicServices = () => {
       title: 'MCX BASEMETAL',
       description: 'Copper, zinc, and aluminum trading strategies',
       monthly: 14999,
-      quarterly: 29999,
+      quarterly: 39999,
       features: [
         '2 recommendations daily',
         'Risk to reward ratio 1:2',
@@ -114,8 +114,8 @@ const BasicServices = () => {
       id: 'mcx-energy',
       title: 'MCX ENERGY',
       description: 'Crude oil and natural gas trading',
-      monthly: 23999,
-      quarterly: 30999,
+      monthly: 14999,
+      quarterly: 39999,
       features: [
         '2 recommendations daily',
         'Risk to reward ratio 1:2',
