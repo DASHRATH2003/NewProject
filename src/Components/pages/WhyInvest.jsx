@@ -89,7 +89,7 @@ const WhyInvest = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Unlock the potential of smart investing with cutting-edge technology and 20+ years of market expertise
+            Unlock the potential of smart investing with cutting-edge technology and 10+ years of market expertise
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
