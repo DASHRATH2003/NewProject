@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { 
   TrendingUp, 
@@ -15,11 +15,41 @@ import {
   Cpu,
   Smartphone,
   ShieldCheck,
-  PlayCircle
+  PlayCircle,
+  X,
+  Phone,
+  Mail
 } from 'lucide-react'
 
 const WhyInvest = () => {
   const sectionRefs = useRef([])
+  const [showContactModal, setShowContactModal] = useState(false)
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  })
+  const [submitting, setSubmitting] = useState(false)
+  const openContactModal = () => setShowContactModal(true)
+  const closeContactModal = () => setShowContactModal(false)
+  const handleContactChange = (e) => {
+    const { name, value } = e.target
+    setContactForm(prev => ({ ...prev, [name]: value }))
+  }
+  const handleContactSubmit = async (e) => {
+    e.preventDefault()
+    setSubmitting(true)
+    try {
+      await new Promise(res => setTimeout(res, 800))
+      alert('Thank you! Our team will contact you shortly.')
+      setContactForm({ name: '', email: '', phone: '', subject: '', message: '' })
+      setShowContactModal(false)
+    } finally {
+      setSubmitting(false)
+    }
+  }
   
   // Simple fade-in animation on scroll
   useEffect(() => {
@@ -92,20 +122,20 @@ const WhyInvest = () => {
             Unlock the potential of smart investing with cutting-edge technology and 10+ years of market expertise
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/register"
+            <button 
+              onClick={openContactModal}
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-semibold hover:from-emerald-600 hover:to-blue-600 transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
               Start Investing Today
               <ChevronRight className="ml-2 w-5 h-5" />
-            </Link>
-            <Link 
-              to="/demo"
+            </button>
+            <button 
+              onClick={openContactModal}
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold hover:bg-white/20 transition-all duration-300"
             >
               <PlayCircle className="mr-2 w-5 h-5" />
               Watch Demo
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -117,7 +147,8 @@ const WhyInvest = () => {
             {[
               { value: "98%", label: "Success Rate", icon: Award, color: "from-emerald-500 to-emerald-400" },
               { value: "10K+", label: "Happy Clients", icon: Users, color: "from-blue-500 to-blue-400" },
-              { value: "10+", label: "Years Experience", icon: Clock, color: "from-blue-500 to-blue-400" }
+              { value: "10+", label: "Years Experience", icon: Clock, color: "from-blue-500 to-blue-400" },
+              { value: "20+Cr", label: "Value Trading", icon: Clock, color: "from-blue-500 to-blue-400" }
             ].map((stat, index) => (
               <div 
                 key={index}
@@ -421,13 +452,13 @@ const WhyInvest = () => {
             Join thousands of successful investors who trust TradeSmart for their financial journey
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/register" 
+            <button 
+              onClick={openContactModal}
               className="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-white text-emerald-600 font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-2xl"
             >
               <DollarSign className="mr-2 w-6 h-6" />
               Start Investing Now
-            </Link>
+            </button>
             <Link 
               to="/contact" 
               className="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-transparent border-2 border-white text-white font-bold text-lg hover:bg-white/10 transition-all duration-300"
@@ -441,6 +472,100 @@ const WhyInvest = () => {
           </p>
         </div>
       </section>
+      
+      {showContactModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8">
+          <div className="absolute inset-0 bg-black/60" onClick={closeContactModal} />
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto mx-4">
+            <div className="flex items-center justify-between p-4 border-b">
+              <h3 className="text-lg font-semibold text-gray-900">Contact Form</h3>
+              <button onClick={closeContactModal} className="p-2 rounded-lg hover:bg-gray-100">
+                <X className="w-5 h-5 text-gray-600" />
+              </button>
+            </div>
+            <form onSubmit={handleContactSubmit} className="p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={contactForm.name}
+                  onChange={handleContactChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  placeholder="Your full name"
+                />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <div className="relative">
+                    <Mail className="w-4 h-4 text-gray-400 absolute left-3 top-3.5" />
+                    <input
+                      type="email"
+                      name="email"
+                      value={contactForm.email}
+                      onChange={handleContactChange}
+                      required
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                      placeholder="you@example.com"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                  <div className="relative">
+                    <Phone className="w-4 h-4 text-gray-400 absolute left-3 top-3.5" />
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={contactForm.phone}
+                      onChange={handleContactChange}
+                      required
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                      placeholder="+91 XXXXX XXXXX"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={contactForm.subject}
+                  onChange={handleContactChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  placeholder="e.g. Request a free demo"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <textarea
+                  name="message"
+                  value={contactForm.message}
+                  onChange={handleContactChange}
+                  rows="4"
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  placeholder="How can we help you?"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-semibold hover:from-emerald-600 hover:to-blue-600 transition-all duration-300 disabled:opacity-60"
+              >
+                {submitting ? 'Submitting...' : 'Submit'}
+              </button>
+              <p className="text-xs text-gray-500 text-center">
+                By submitting, you agree to be contacted by our team regarding your inquiry.
+              </p>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

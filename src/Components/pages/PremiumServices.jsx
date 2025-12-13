@@ -144,8 +144,7 @@ const PremiumServices = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Unlock advanced trading strategies and premium financial services
-            designed for serious investors and traders
+            We will be providing you with 100% intraday calls with proper stop loss and target using our technical & fundamental analysis. There will be 2 recommendations where a recommendation will have a risk to reward ratio around 1.5:2.
           </p>
           <div className="inline-flex items-center bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-500/30 rounded-full px-6 py-2">
             <svg

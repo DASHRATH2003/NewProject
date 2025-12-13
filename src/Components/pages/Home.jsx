@@ -26,6 +26,7 @@ const Home = () => {
     name: '',
     email: '',
     phone: '',
+    subject: '',
     message: ''
   })
   const [submitting, setSubmitting] = useState(false)
@@ -106,7 +107,7 @@ const Home = () => {
     try {
       await new Promise(res => setTimeout(res, 800))
       alert('Thank you! Our team will contact you shortly.')
-      setContactForm({ name: '', email: '', phone: '', message: '' })
+      setContactForm({ name: '', email: '', phone: '', subject: '', message: '' })
       setShowContactModal(false)
     } finally {
       setSubmitting(false)
@@ -179,12 +180,12 @@ const Home = () => {
                   Start Trading Now
                   <TrendingUp className="ml-2 w-5 h-5" />
                 </button>
-                <Link 
-                  to="/contact"
+                <button
+                  onClick={openContactModal}
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold hover:bg-white/20 transition-all duration-300"
                 >
                   Try Free Demo
-                </Link>
+                </button>
               </div>
             </div>
 
@@ -288,97 +289,6 @@ const Home = () => {
   </div>
 </section>
 
-       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Tailored <span className="text-emerald-600">Services</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose the perfect plan that matches your trading goals
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:border-emerald-200 transition-all duration-300">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-gray-900">Basic Trading</h3>
-                <div className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold">
-                  ₹999/month
-                </div>
-              </div>
-              <p className="text-gray-600 mb-8">Perfect for beginners starting their trading journey</p>
-              <ul className="space-y-4 mb-8">
-                {['Real-time market data', 'Basic technical analysis', 'Mobile trading app', 'Email support', '5 free trades/month'].map((feature, index) => (
-                  <li key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 mr-3" />
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link 
-                to="/register" 
-                className="block w-full text-center bg-gradient-to-r from-gray-900 to-gray-700 text-white py-4 rounded-xl font-semibold hover:from-gray-800 hover:to-gray-600 transition-all duration-300"
-              >
-                Get Started
-              </Link>
-            </div>
-
-            <div className="bg-gradient-to-br from-emerald-500 to-blue-500 rounded-2xl shadow-2xl p-8 transform scale-105 relative">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-white text-emerald-700 px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
-                  Most Popular
-                </span>
-              </div>
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-white">Premium Trading</h3>
-                <div className="bg-white/20 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  ₹2,999/month
-                </div>
-              </div>
-              <p className="text-white/90 mb-8">Advanced features for serious traders</p>
-              <ul className="space-y-4 mb-8">
-                {['Advanced charting tools', 'AI-powered insights', 'Priority 24/7 support', 'Custom alerts & signals', 'Unlimited trades', 'Portfolio analysis'].map((feature, index) => (
-                  <li key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-white mr-3" />
-                    <span className="text-white">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link 
-                to="/register" 
-                className="block w-full text-center bg-white text-emerald-600 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300"
-              >
-                Upgrade Now
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:border-blue-200 transition-all duration-300">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-gray-900">HNI Services</h3>
-                <div className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
-                  Custom Pricing
-                </div>
-              </div>
-              <p className="text-gray-600 mb-8">Exclusive services for high net worth individuals</p>
-              <ul className="space-y-4 mb-8">
-                {['Personal account manager', 'Custom strategies', '24/7 phone support', 'Exclusive research reports', 'Direct market access', 'Wealth management'].map((feature, index) => (
-                  <li key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-blue-500 mr-3" />
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link 
-                to="/hni-services" 
-                className="block w-full text-center bg-gradient-to-r from-blue-500 to-emerald-500 text-white py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-emerald-600 transition-all duration-300"
-              >
-                Contact Sales
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Features Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
@@ -486,9 +396,9 @@ const Home = () => {
       {/* Footer */}
      
       {showContactModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8">
           <div className="absolute inset-0 bg-black/60" onClick={closeContactModal} />
-          <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full mx-4">
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto mx-4">
             <div className="flex items-center justify-between p-4 border-b">
               <h3 className="text-lg font-semibold text-gray-900">Contact Form</h3>
               <button onClick={closeContactModal} className="p-2 rounded-lg hover:bg-gray-100">
@@ -539,6 +449,18 @@ const Home = () => {
                     />
                   </div>
                 </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={contactForm.subject}
+                  onChange={handleContactChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  placeholder="e.g. Request a free demo"
+                />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>

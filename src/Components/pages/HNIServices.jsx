@@ -150,7 +150,7 @@ const HNIServices = () => {
           </span>
         </h1>
         <p className="text-xl text-white mb-4 max-w-4xl mx-auto">
-          Professional intraday and Buy Today and Sell Tomorrow (BTST) calls with proper stop loss and target using our technical & fundamental analysis.
+          We will be providing you with intraday and Buy Today and Sell Tomorrow (BTST) calls with proper stop loss and target using our technical & fundamental analysis. There will be 2 recommendations where a recommendation will have a risk to reward ratio around 1:2.
         </p>
        
         <p className="text-gray-700 mt-2">

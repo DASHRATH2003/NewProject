@@ -98,7 +98,7 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                         <Award className="w-5 h-5 text-emerald-600" />
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900 group-hover/item:text-emerald-600">Basic Trading</div>
+                        <div className="font-semibold text-gray-900 group-hover/item:text-emerald-600">Basic Service</div>
                         <div className="text-xs text-gray-500">Perfect for beginners</div>
                       </div>
                     </Link>
@@ -110,7 +110,7 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                         <BarChart3 className="w-5 h-5 text-blue-600" />
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900 group-hover/item:text-blue-600">Premium Trading</div>
+                        <div className="font-semibold text-gray-900 group-hover/item:text-blue-600">Premium Service</div>
                         <div className="text-xs text-gray-500">Advanced features</div>
                       </div>
                     </Link>

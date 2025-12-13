@@ -144,7 +144,7 @@ const BasicServices = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Start your trading journey with our comprehensive basic services designed for beginners and intermediate traders
+            We will be providing you with 100% intraday calls with proper stop loss and target using our technical & fundamental analysis. There will be 2 recommendations where a recommendation will have a risk to reward ratio around 1:1.
           </p>
         </div>
       </section>
