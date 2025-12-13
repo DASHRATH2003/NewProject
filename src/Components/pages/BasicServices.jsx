@@ -25,7 +25,7 @@ const BasicServices = () => {
       title: 'STOCK FUTURES',
       description: 'Professional portfolio management for better returns',
       monthly: 12999,
-      quarterly: 17999,
+      quarterly: 29999,
       features: [
         'Portfolio analysis',
         'Asset allocation guidance',
@@ -39,8 +39,8 @@ const BasicServices = () => {
       id: 'market-research',
       title: 'STOCK OPTIONS',
       description: 'Comprehensive market research and analysis',
-      monthly: 14999,
-      quarterly: 22999,
+      monthly: 9999,
+      quarterly: 24999,
       features: [
         'Daily market reports',
         'Sector analysis',
