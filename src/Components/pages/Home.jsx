@@ -347,7 +347,7 @@ const Home = () => {
               </div>
               <div className="pt-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Expert Community</h3>
-                <p className="text-gray-600">Learn from 20+ years of trading veterans</p>
+                <p className="text-gray-600">Learn from 10+ years of trading veterans</p>
               </div>
             </div>
           </div>
