@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../../assets/logo-tredsmartly.png'
+import logo from '../../assets/Ardhiyalogo.jpeg'
 
 const Footer = () => {
   return (
@@ -14,11 +14,11 @@ const Footer = () => {
               <div className="flex items-center space-x-3 mb-2">
                 <img 
                   src={logo} 
-                  alt="TradeSmart Logo" 
+                  alt="ArthaVeda Research Logo" 
                   className="w-36 h-16 object-contain"
                 />
                 <div>
-                  <div className="text-2xl font-bold text-white">TradeSmartly</div>
+                  <div className="text-2xl font-bold text-white">ArthaVeda Research</div>
                   <div className="text-sm text-emerald-400 font-medium">Intelligent Trading Solutions</div>
                 </div>
               </div>
@@ -180,7 +180,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 <span className="text-emerald-400 font-semibold">TradeSmartly</span>. All rights reserved.
+              © 2026 <span className="text-emerald-400 font-semibold">ArthaVeda Research</span>. All rights reserved.
             </div>
             <div className="flex items-center space-x-6 text-sm">
               <Link to="/terms" className="text-gray-400 hover:text-white transition-colors duration-300">
@@ -200,13 +200,7 @@ const Footer = () => {
           </div>
           
           {/* Disclaimer */}
-          <div className="mt-6 pt-6 border-t border-gray-900">
-            <p className="text-gray-500 text-xs text-center">
-              <span className="font-semibold text-gray-400">Disclaimer:</span> Trading involves risk. Past performance is not indicative of future results. 
-              TradeSmart provides educational content and tools but does not guarantee profits. 
-              Consult with a financial advisor before making investment decisions.
-            </p>
-          </div>
+         
         </div>
       </div>
     </footer>

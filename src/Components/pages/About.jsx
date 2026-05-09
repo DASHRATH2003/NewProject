@@ -88,7 +88,7 @@ const About = () => {
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
-              About TradeSmartly
+              About ArthaVeda Research
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -98,7 +98,7 @@ const About = () => {
       </section>
 
       {/* Company Overview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 mt-12 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
             <div>
@@ -112,7 +112,7 @@ const About = () => {
               </div>
               
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                TradeSmart is an end-to-end solution for all financial research services. 
+                ArthaVeda Research is an end-to-end solution for all financial research services. 
                 "Something for someone and everyone shall witness an enhancement in their wealth" 
                 is the motto that drives our company and team.
               </p>
@@ -143,7 +143,7 @@ const About = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                  alt="TradeSmart Team"
+                  alt="ArthaVeda Research Team"
                   className="w-full h-[400px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>

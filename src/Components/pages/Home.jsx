@@ -17,6 +17,7 @@ import {
   Phone,
   Mail
 } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -104,11 +105,28 @@ const Home = () => {
   const handleContactSubmit = async (e) => {
     e.preventDefault()
     setSubmitting(true)
+    
+    // REPLACE THESE WITH YOUR ACTUAL EMAILJS CREDENTIALS
+    const serviceId = 'YOUR_SERVICE_ID'
+    const templateId = 'YOUR_TEMPLATE_ID'
+    const publicKey = 'YOUR_PUBLIC_KEY'
+
+    const templateParams = {
+      name: contactForm.name,
+      email: contactForm.email,
+      phone: contactForm.phone,
+      subject: contactForm.subject,
+      message: contactForm.message,
+    }
+
     try {
-      await new Promise(res => setTimeout(res, 800))
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
       alert('Thank you! Our team will contact you shortly.')
       setContactForm({ name: '', email: '', phone: '', subject: '', message: '' })
       setShowContactModal(false)
+    } catch (error) {
+      console.error('FAILED...', error)
+      alert('Failed to send message. Please try again.')
     } finally {
       setSubmitting(false)
     }
@@ -156,7 +174,7 @@ const Home = () => {
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                 <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                  TradeSmartly
+                    ArthaVeda Research
                 </span>
                 <span className="block text-2xl md:text-3xl text-gray-300 mt-4 font-light">
                   Your Gateway to Smarter Financial Decisions
@@ -215,58 +233,58 @@ const Home = () => {
           </div>
         </div>
       </section>
-     <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50 via-white to-blue-50">
+     <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50 via-white to-orange-50">
   <div className="max-w-7xl mx-auto">
     <div className="grid lg:grid-cols-2 gap-12 items-stretch"> {/* Changed to items-stretch */}
       {/* Content Column */}
       <div className="flex flex-col justify-center"> {/* Added flex container */}
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          AI-Powered Trading Insights
+          Research-Backed Trading Guidance
         </h2>
         <p className="text-xl text-gray-600 mb-8">
-          Harness real-time analytics and intelligent signals to make smarter trading decisions with confidence.
+          Get practical market ideas, disciplined risk levels, and timely support for intraday, BTST, and premium trading plans.
         </p>
         <div className="space-y-6">
           <div className="flex items-start">
             <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-              <LineChart className="w-6 h-6 text-emerald-600" />
+              <LineChart className="w-6 h-6 text-[#087c4f]" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">Signal-Driven Entries</h3>
-              <p className="text-gray-600">Smart indicators help you spot high-probability setups across markets.</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">Actionable Market Calls</h3>
+              <p className="text-gray-600">Clear entry, target, and stop-loss levels for focused trading decisions.</p>
             </div>
           </div>
           <div className="flex items-start">
-            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-              <Zap className="w-6 h-6 text-blue-600" />
+            <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+              <Zap className="w-6 h-6 text-[#c56a00]" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">Real-Time Monitoring</h3>
-              <p className="text-gray-600">Stay updated with live performance tracking and instant alerts.</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">Fast Trade Updates</h3>
+              <p className="text-gray-600">Receive timely alerts and follow-up guidance so you can react with confidence.</p>
             </div>
           </div>
           <div className="flex items-start">
             <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-              <Shield className="w-6 h-6 text-emerald-600" />
+              <Shield className="w-6 h-6 text-[#087c4f]" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">Risk Controls</h3>
-              <p className="text-gray-600">Position sizing and risk rules built-in for disciplined trading.</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">Risk-First Approach</h3>
+              <p className="text-gray-600">Every idea is built around capital protection, position discipline, and defined exits.</p>
             </div>
           </div>
         </div>
         <div className="flex gap-4 mt-8">
           <Link 
-            to="/register" 
-            className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-semibold hover:from-emerald-600 hover:to-blue-600 transition-all duration-300"
+            to="/services/basic" 
+            className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-[#0a9f72] to-[#e78318] text-white font-semibold hover:from-[#087c4f] hover:to-[#c56a00] transition-all duration-300"
           >
-            Get Started
+            View Plans
           </Link>
           <Link 
-            to="/research" 
+            to="/services/basic" 
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white border border-gray-200 text-gray-900 font-semibold hover:bg-gray-50 transition-all duration-300"
           >
-            Learn More
+            Market Research
           </Link>
         </div>
       </div>
@@ -275,14 +293,14 @@ const Home = () => {
       <div className="relative h-full min-h-[500px] overflow-hidden"> {/* Added min-height and overflow-hidden */}
         <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
           <img 
-            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80" 
-            alt="AI Trading Dashboard" 
+            src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=1200&q=80" 
+            alt="Stock market trading dashboard" 
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute right-2 bottom-2 sm:-bottom-6 sm:-right-6 bg-white p-4 sm:p-6 rounded-2xl shadow-xl">
-          <div className="text-3xl font-bold text-emerald-600 mb-2">AI</div>
-          <div className="text-gray-700">Insights Active</div>
+        <div className="absolute right-2 bottom-2 sm:-bottom-6 sm:-right-6 bg-white p-4 sm:p-6 rounded-2xl shadow-xl border border-emerald-100">
+          <div className="text-3xl font-bold text-[#087c4f] mb-2">100%</div>
+          <div className="text-gray-700">Risk-Managed Calls</div>
         </div>
       </div>
     </div>
@@ -290,12 +308,117 @@ const Home = () => {
 </section>
 
 
+      {/* Trending Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-500/30 mb-4">
+              <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2 animate-pulse"></span>
+              <span className="text-emerald-400 text-sm font-medium">Market Updates</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Trending in Markets
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Stay updated with the latest market trends and investment opportunities
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Trending Card 1 */}
+            <div className="group relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl">
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80" 
+                  alt="Tech stocks rally"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                <span className="absolute top-4 right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Trending</span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center mb-3">
+                  <TrendingUp className="w-5 h-5 text-emerald-400 mr-2" />
+                  <span className="text-emerald-400 font-semibold text-sm">+8.5%</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Tech Stocks Rally</h3>
+                <p className="text-gray-400 text-sm mb-4">IT sector shows strong momentum with major index companies leading the rally</p>
+                <div className="flex items-center text-gray-500 text-xs">
+                  <Clock className="w-4 h-4 mr-1" />
+                  <span>2 hours ago</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Trending Card 2 */}
+            <div className="group relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl">
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=600&q=80" 
+                  alt="Gold prices surge"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                <span className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Hot</span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center mb-3">
+                  <TrendingUp className="w-5 h-5 text-blue-400 mr-2" />
+                  <span className="text-blue-400 font-semibold text-sm">+1.2%</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Gold Prices Surge</h3>
+                <p className="text-gray-400 text-sm mb-4">Precious metals gain as investors seek safe haven amid global uncertainties</p>
+                <div className="flex items-center text-gray-500 text-xs">
+                  <Clock className="w-4 h-4 mr-1" />
+                  <span>4 hours ago</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Trending Card 3 */}
+            <div className="group relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl">
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80" 
+                  alt="Bank sector recovery"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                <span className="absolute top-4 right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Bullish</span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center mb-3">
+                  <TrendingUp className="w-5 h-5 text-emerald-400 mr-2" />
+                  <span className="text-emerald-400 font-semibold text-sm">+3.8%</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Bank Sector Recovery</h3>
+                <p className="text-gray-400 text-sm mb-4">Financial sector shows resilience with strong Q1 results and positive outlook</p>
+                <div className="flex items-center text-gray-500 text-xs">
+                  <Clock className="w-4 h-4 mr-1" />
+                  <span>6 hours ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link 
+              to="/services/basic" 
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-semibold hover:from-emerald-600 hover:to-blue-600 transition-all duration-300 hover:shadow-2xl"
+            >
+              View All Market Analysis
+              <BarChart3 className="ml-2 w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Why Choose <span className="text-emerald-600">TradeSmartly</span>?
+              Why Choose <span className="text-emerald-600">ArthaVeda Research</span>?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Experience the perfect blend of technology, expertise, and performance
@@ -361,6 +484,99 @@ const Home = () => {
 
 
      
+
+      {/* How It Works Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              How It Works
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Get started with ArthaVeda Research in just 4 simple steps
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Step 1 */}
+            <div className="relative">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-blue-500 rounded-full flex items-center justify-center mb-6 shadow-lg">
+                  <span className="text-3xl font-bold text-white">1</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Book Free Demo</h3>
+                <p className="text-gray-600">Schedule a personalized consultation with our trading experts to understand your goals</p>
+              </div>
+              {/* Connector line for desktop */}
+              <div className="hidden lg:block absolute top-10 left-[60%] w-[40%] h-1 bg-gradient-to-r from-emerald-500 to-transparent"></div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full flex items-center justify-center mb-6 shadow-lg">
+                  <span className="text-3xl font-bold text-white">2</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Choose Your Plan</h3>
+                <p className="text-gray-600">Select from our Basic, Premium, or HNI trading plans based on your investment goals</p>
+              </div>
+              {/* Connector line for desktop */}
+              <div className="hidden lg:block absolute top-10 left-[60%] w-[40%] h-1 bg-gradient-to-r from-blue-500 to-transparent"></div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-blue-500 rounded-full flex items-center justify-center mb-6 shadow-lg">
+                  <span className="text-3xl font-bold text-white">3</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Get Market Calls</h3>
+                <p className="text-gray-600">Receive expert trading signals and actionable insights directly on your dashboard</p>
+              </div>
+              {/* Connector line for desktop */}
+              <div className="hidden lg:block absolute top-10 left-[60%] w-[40%] h-1 bg-gradient-to-r from-emerald-500 to-transparent"></div>
+            </div>
+
+            {/* Step 4 */}
+            <div>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full flex items-center justify-center mb-6 shadow-lg">
+                  <span className="text-3xl font-bold text-white">4</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Start Trading</h3>
+                <p className="text-gray-600">Execute trades with confidence using our intuitive platform with expert support</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Info */}
+          <div className="mt-12 bg-gradient-to-r from-emerald-50 to-blue-50 rounded-2xl p-8 border border-emerald-200">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="flex items-start">
+                <CheckCircle className="w-6 h-6 text-emerald-600 mr-3 flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-1">No Hidden Charges</h4>
+                  <p className="text-gray-600 text-sm">Transparent pricing with no hidden fees or surprise costs</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="w-6 h-6 text-emerald-600 mr-3 flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-1">Expert Support 24/7</h4>
+                  <p className="text-gray-600 text-sm">Round-the-clock dedicated support for all your trading needs</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle className="w-6 h-6 text-emerald-600 mr-3 flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-1">30-Day Money Back</h4>
+                  <p className="text-gray-600 text-sm">Full refund guarantee if you're not completely satisfied</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-600 via-blue-600 to-emerald-600">

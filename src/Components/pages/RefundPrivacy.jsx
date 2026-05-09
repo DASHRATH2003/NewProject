@@ -208,7 +208,7 @@ const RefundPrivacy = () => {
                         </svg>
                         <div>
                           <p className="text-sm text-gray-600">Email</p>
-                          <p className="text-gray-900 font-medium">Support@tradesmartly.co.in</p>
+                          <p className="text-gray-900 font-medium">Support@arthaveda.co.in</p>
                         </div>
                       </div>
                       <div className="flex items-center">

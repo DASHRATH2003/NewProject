@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 const Support = () => {
   const [activeTab, setActiveTab] = useState('faq')
@@ -68,11 +69,30 @@ const Support = () => {
     }
   ]
 
-  const handleContactSubmit = (e) => {
+  const handleContactSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission
-    alert('Thank you for contacting us! We will get back to you within 24 hours.')
-    setContactForm({ name: '', email: '', subject: '', message: '' })
+    
+    // REPLACE THESE WITH YOUR ACTUAL EMAILJS CREDENTIALS
+    const serviceId = 'YOUR_SERVICE_ID'
+    const templateId = 'YOUR_TEMPLATE_ID'
+    const publicKey = 'YOUR_PUBLIC_KEY'
+
+    const templateParams = {
+      name: contactForm.name,
+      email: contactForm.email,
+      phone: 'Not provided in Support Form',
+      subject: contactForm.subject,
+      message: contactForm.message,
+    }
+
+    try {
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+      alert('Thank you for contacting us! We will get back to you within 24 hours.')
+      setContactForm({ name: '', email: '', subject: '', message: '' })
+    } catch (error) {
+      console.error('FAILED...', error)
+      alert('Failed to send message. Please try again.')
+    }
   }
 
   const handleInputChange = (e) => {

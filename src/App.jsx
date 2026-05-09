@@ -28,7 +28,6 @@ import Terms from './Components/pages/Terms'
 import BasicServices from './Components/pages/BasicServices'
 import PremiumServices from './Components/pages/PremiumServices'
 import Payment from './Components/pages/Payment'
-import OfferBanner from './Components/common/OfferBanner'
 
 // Auth Guard
 import AuthGuard from './Components/auth/AuthGuard'
@@ -67,9 +66,6 @@ const AppContent = () => {
             onMenuClick={showSidebar ? () => actions.toggleSidebar() : null}
             showMenuButton={showSidebar}
           />
-        )}
-        {!showSidebar && (
-          <OfferBanner />
         )}
         <main ref={mainRef} className={showSidebar ? "p-4 lg:p-6 h-screen overflow-y-auto" : "flex-1"}>
           <Routes>

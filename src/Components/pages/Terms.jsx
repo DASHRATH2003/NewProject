@@ -19,7 +19,7 @@ const Terms = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Understanding your rights and responsibilities when using TradeSmart services
+            Understanding your rights and responsibilities when using ArthaVeda Research services
           </p>
           <div className="inline-flex items-center text-sm text-gray-500 bg-gray-100 px-4 py-2 rounded-full">
             <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -90,7 +90,7 @@ const Terms = () => {
                         <div>
                           <h2 className="text-2xl font-bold text-gray-900 mb-3">Acceptance of Terms</h2>
                           <p className="text-gray-700 leading-relaxed">
-                            By accessing and using TradeSmart's services, you accept and agree to be bound by the terms 
+                            By accessing and using ArthaVeda Research's services, you accept and agree to be bound by the terms 
                             and provisions of this agreement. If you do not agree to abide by these terms, please do not use our services.
                           </p>
                         </div>
@@ -106,7 +106,7 @@ const Terms = () => {
                         <div>
                           <h2 className="text-2xl font-bold text-gray-900 mb-3">Service Description</h2>
                           <p className="text-gray-700 leading-relaxed mb-4">
-                            TradeSmart provides comprehensive financial research, trading recommendations, and investment advisory services. Our offerings include:
+                            ArthaVeda Research provides comprehensive financial research, trading recommendations, and investment advisory services. Our offerings include:
                           </p>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             {[
@@ -203,7 +203,7 @@ const Terms = () => {
                         <div>
                           <h2 className="text-2xl font-bold text-gray-900 mb-3">Limitation of Liability</h2>
                           <p className="text-gray-700 leading-relaxed">
-                            TradeSmart shall not be liable for any direct, indirect, incidental, special, or consequential damages 
+                            ArthaVeda Research shall not be liable for any direct, indirect, incidental, special, or consequential damages 
                             resulting from the use or inability to use our services, including but not limited to trading losses, 
                             missed opportunities, or system downtime.
                           </p>
@@ -249,7 +249,7 @@ const Terms = () => {
                         <div>
                           <h2 className="text-2xl font-bold text-gray-900 mb-3">Intellectual Property</h2>
                           <p className="text-gray-700 leading-relaxed">
-                            All content, research, analysis, and recommendations provided by TradeSmart are proprietary and 
+                            All content, research, analysis, and recommendations provided by ArthaVeda Research are proprietary and 
                             protected by intellectual property laws. Users may not reproduce, distribute, or commercialize 
                             our content without written permission.
                           </p>
@@ -282,7 +282,7 @@ const Terms = () => {
                         <div>
                           <h2 className="text-2xl font-bold text-gray-900 mb-3">Termination</h2>
                           <p className="text-gray-700 leading-relaxed">
-                            Either party may terminate this agreement at any time. TradeSmart reserves the right to 
+                            Either party may terminate this agreement at any time. ArthaVeda Research reserves the right to 
                             suspend or terminate accounts that violate these terms or engage in fraudulent activities.
                           </p>
                         </div>
@@ -298,7 +298,7 @@ const Terms = () => {
                         <div>
                           <h2 className="text-2xl font-bold text-gray-900 mb-3">Regulatory Compliance</h2>
                           <p className="text-gray-700 leading-relaxed">
-                            TradeSmart operates in compliance with applicable financial regulations. We are registered 
+                            ArthaVeda Research operates in compliance with applicable financial regulations. We are registered 
                             with relevant regulatory authorities and follow prescribed guidelines for investment advisory services.
                           </p>
                         </div>
@@ -340,7 +340,7 @@ const Terms = () => {
                                 </svg>
                                 <div>
                                   <p className="text-sm text-gray-600">Email</p>
-                                  <p className="text-gray-900 font-medium">Support@tradesmartly.co.in</p>
+                                  <p className="text-gray-900 font-medium">Support@arthaveda.co.in</p>
                                 </div>
                               </div>
                               <div className="flex items-center">

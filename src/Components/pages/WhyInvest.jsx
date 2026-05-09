@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { Link } from 'react-router-dom'
 import { 
   TrendingUp, 
@@ -41,11 +42,28 @@ const WhyInvest = () => {
   const handleContactSubmit = async (e) => {
     e.preventDefault()
     setSubmitting(true)
+
+    // REPLACE THESE WITH YOUR ACTUAL EMAILJS CREDENTIALS
+    const serviceId = 'YOUR_SERVICE_ID'
+    const templateId = 'YOUR_TEMPLATE_ID'
+    const publicKey = 'YOUR_PUBLIC_KEY'
+
+    const templateParams = {
+      name: contactForm.name,
+      email: contactForm.email,
+      phone: contactForm.phone,
+      subject: contactForm.subject,
+      message: contactForm.message,
+    }
+
     try {
-      await new Promise(res => setTimeout(res, 800))
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
       alert('Thank you! Our team will contact you shortly.')
       setContactForm({ name: '', email: '', phone: '', subject: '', message: '' })
       setShowContactModal(false)
+    } catch (error) {
+      console.error('FAILED...', error)
+      alert('Failed to send message. Please try again.')
     } finally {
       setSubmitting(false)
     }
@@ -115,18 +133,18 @@ const WhyInvest = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Why Invest with
             <span className="block bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent mt-2">
-              TradeSmartly?
+              ArthaVeda Research?
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Unlock the potential of smart investing with cutting-edge technology and 10+ years of market expertise
+            Unlock the potential of smart investing with cutting-edge research, disciplined risk management, and 10+ years of proven market expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={openContactModal}
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-semibold hover:from-emerald-600 hover:to-blue-600 transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
-              Start Investing Today
+              Book Free Demo
               <ChevronRight className="ml-2 w-5 h-5" />
             </button>
             <button 
@@ -178,7 +196,7 @@ const WhyInvest = () => {
               Your <span className="text-emerald-600">Investment Advantage</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why thousands of investors trust TradeSmart for their financial growth
+              Discover why thousands of investors choose ArthaVeda Research to grow their wealth with confidence
             </p>
           </div>
 
@@ -326,21 +344,21 @@ const WhyInvest = () => {
                 title: "Fastest Growing Economy",
                 description: "India is one of the fastest-growing major economies, providing excellent long-term wealth creation opportunities",
                 icon: Rocket,
-                image: "https://images.unsplash.com/photo-1580655653885-65763b2597d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80",
                 stats: "7.2% GDP Growth"
               },
               {
                 title: "Young Demographics",
                 description: "With a young and growing population, India offers a large consumer base driving demand across sectors",
                 icon: Users,
-                image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80",
                 stats: "1.4B Population"
               },
               {
                 title: "Innovation Hub",
                 description: "India is becoming a global hub for technology and innovation, creating new investment opportunities",
                 icon: Cpu,
-                image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=80",
                 stats: "100+ Unicorns"
               }
             ].map((item, index) => (
@@ -383,28 +401,28 @@ const WhyInvest = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Our <span className="text-emerald-400">Technology Edge</span>
+                Our <span className="text-emerald-400">Trading Technology Edge</span>
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Powered by cutting-edge technology for superior investment performance
+                Built for traders who need fast market signals, secure execution, and actionable insights.
               </p>
               
               <div className="space-y-6">
                 {[
                   {
                     icon: Zap,
-                    title: "AI-Powered Analytics",
-                    description: "Advanced machine learning algorithms analyze market data for predictive insights"
+                    title: "AI-Powered Trade Signals",
+                    description: "Machine learning models identify high-conviction trades and timing signals for faster decisions."
                   },
                   {
                     icon: Shield,
-                    title: "Secure Platform",
-                    description: "Bank-grade security with 256-bit encryption and multi-factor authentication"
+                    title: "Secure Trade Execution",
+                    description: "Fast, secure order routing with protective risk controls built for active markets."
                   },
                   {
                     icon: Smartphone,
-                    title: "Modern & Professional",
-                    description: "Trade smarter on the go with our powerful mobile app — invest anytime, anywhere."
+                    title: "Mobile Trading Access",
+                    description: "Monitor positions and execute trades instantly from our responsive mobile platform."
                   }
                 ].map((tech, index) => (
                   <div 
@@ -426,13 +444,13 @@ const WhyInvest = () => {
 
             <div className="relative opacity-0" ref={el => sectionRefs.current[17] = el}>
               <img 
-                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Technology Dashboard"
+                src="https://t4.ftcdn.net/jpg/01/84/91/27/360_F_184912716_qwpfSzNyX8BGtsXHJTgpTmaPCOPEwhRd.jpg"
+                alt="Trading Dashboard"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-emerald-500 to-blue-500 p-6 rounded-2xl shadow-xl">
                 <div className="text-2xl font-bold text-white mb-2">Real-time</div>
-                <div className="text-white">Market Updates</div>
+                <div className="text-white">Market Insights</div>
               </div>
             </div>
           </div>
@@ -449,7 +467,7 @@ const WhyInvest = () => {
             Ready to Grow Your Wealth?
           </h2>
           <p className="text-xl text-white/90 mb-6 max-w-3xl mx-auto">
-            Join thousands of successful investors who trust TradeSmart for their financial journey
+            Join thousands of successful investors who trust ArthaVeda Research for smarter long-term investing
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 

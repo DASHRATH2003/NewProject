@@ -251,22 +251,7 @@ const HNIServices = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="text-center mt-16 px-4">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Start Trading?
-          </h2>
-          <p className="text-gray-700 mb-6">
-            Choose your preferred service and start receiving professional trading calls today.
-          </p>
-          <Link 
-            to="/support" 
-            className="inline-block bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-emerald-600 transition-all duration-300"
-          >
-            Contact Us
-          </Link>
-        </div>
-      </section>
+    
     </div>
   )
 }

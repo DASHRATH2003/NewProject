@@ -15,12 +15,16 @@ import {
   BarChart3,
   DollarSign
 } from 'lucide-react'
-import logo from '../../assets/Trade.png'
+import logo from '../../assets/Ardhiyalogo.jpeg'
 
 const Header = ({ onMenuClick, showMenuButton = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const activeNavClass = 'bg-gradient-to-r from-[#e7f7ec] to-[#fff3df] text-[#087c4f] border border-[#91e4b5] shadow-md'
+  const idleNavClass = 'text-gray-700 hover:text-[#087c4f] hover:bg-gradient-to-r hover:from-[#e7f7ec] hover:to-[#fff3df] hover:border hover:border-[#91e4b5] transition-all duration-300 hover:shadow-lg hover:scale-105'
+  const mobileActiveNavClass = 'bg-gradient-to-r from-[#e7f7ec] to-[#fff3df] text-[#087c4f] border border-[#91e4b5]'
+  const mobileIdleNavClass = 'text-gray-700 hover:text-[#087c4f] hover:bg-gradient-to-r hover:from-[#e7f7ec] hover:to-[#fff3df] hover:border hover:border-[#91e4b5] transition-all duration-300'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +47,7 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
           <div className="flex justify-between items-center py-2">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3 group min-w-0">
-              <img src={logo} alt="TradeSmart Logo" className="w-28 h-14 sm:w-32 sm:h-16 object-contain transition-transform duration-300 group-hover:scale-105" />
+              <img src={logo} alt="ArthaVeda Research Logo" className="w-28 h-14 sm:w-32 sm:h-16 object-contain transition-transform duration-300 group-hover:scale-105" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -52,8 +56,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 to="/" 
                 className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap ${
                   isActive('/') 
-                    ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                    : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50'
+                    ? activeNavClass
+                    : idleNavClass
                 }`}
               >
                 <Home className="w-5 h-5" />
@@ -64,8 +68,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 to="/why-invest" 
                 className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap ${
                   isActive('/why-invest') 
-                    ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                    : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50'
+                    ? activeNavClass
+                    : idleNavClass
                 }`}
               >
                 <TrendingUp className="w-5 h-5" />
@@ -77,8 +81,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 <button 
                   className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap ${
                     location.pathname.includes('/services') || location.pathname.includes('/hni-services')
-                      ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                      : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50'
+                      ? activeNavClass
+                      : idleNavClass
                   }`}
                 >
                   <Briefcase className="w-5 h-5" />
@@ -92,37 +96,37 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                     </div>
                     <Link 
                       to="/services/basic" 
-                      className="flex items-center space-x-3 px-4 py-3 hover:bg-emerald-50 transition-colors duration-200 group/item"
+                      className="flex items-center space-x-3 px-4 py-3 hover:bg-[#e7f7ec] transition-colors duration-200 group/item"
                     >
-                      <div className="w-10 h-10 bg-gradient-to-r from-emerald-100 to-emerald-50 rounded-lg flex items-center justify-center">
-                        <Award className="w-5 h-5 text-emerald-600" />
+                      <div className="w-10 h-10 bg-gradient-to-r from-[#d8f4e2] to-[#fff0d9] rounded-lg flex items-center justify-center">
+                        <Award className="w-5 h-5 text-[#087c4f]" />
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900 group-hover/item:text-emerald-600">Basic Service</div>
+                        <div className="font-semibold text-gray-900 group-hover/item:text-[#087c4f]">Basic Service</div>
                         <div className="text-xs text-gray-500">Perfect for beginners</div>
                       </div>
                     </Link>
                     <Link 
                       to="/services/premium" 
-                      className="flex items-center space-x-3 px-4 py-3 hover:bg-blue-50 transition-colors duration-200 group/item"
+                      className="flex items-center space-x-3 px-4 py-3 hover:bg-[#fff3df] transition-colors duration-200 group/item"
                     >
-                      <div className="w-10 h-10 bg-gradient-to-r from-blue-100 to-blue-50 rounded-lg flex items-center justify-center">
-                        <BarChart3 className="w-5 h-5 text-blue-600" />
+                      <div className="w-10 h-10 bg-gradient-to-r from-[#fff0d9] to-[#e7f7ec] rounded-lg flex items-center justify-center">
+                        <BarChart3 className="w-5 h-5 text-[#c56a00]" />
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900 group-hover/item:text-blue-600">Premium Service</div>
+                        <div className="font-semibold text-gray-900 group-hover/item:text-[#c56a00]">Premium Service</div>
                         <div className="text-xs text-gray-500">Advanced features</div>
                       </div>
                     </Link>
                     <Link 
                       to="/hni-services" 
-                      className="flex items-center space-x-3 px-4 py-3 hover:bg-emerald-50 transition-colors duration-200 group/item"
+                      className="flex items-center space-x-3 px-4 py-3 hover:bg-[#e7f7ec] transition-colors duration-200 group/item"
                     >
-                      <div className="w-10 h-10 bg-gradient-to-r from-emerald-100 to-emerald-50 rounded-lg flex items-center justify-center">
-                        <DollarSign className="w-5 h-5 text-emerald-600" />
+                      <div className="w-10 h-10 bg-gradient-to-r from-[#d8f4e2] to-[#fff0d9] rounded-lg flex items-center justify-center">
+                        <DollarSign className="w-5 h-5 text-[#087c4f]" />
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900 group-hover/item:text-emerald-600">HNI Services</div>
+                        <div className="font-semibold text-gray-900 group-hover/item:text-[#087c4f]">HNI Services</div>
                         <div className="text-xs text-gray-500">Exclusive for HNIs</div>
                       </div>
                     </Link>
@@ -134,8 +138,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 to="/about" 
                 className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap ${
                   isActive('/about') 
-                    ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                    : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50'
+                    ? activeNavClass
+                    : idleNavClass
                 }`}
               >
                 <Users className="w-5 h-5" />
@@ -146,8 +150,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 to="/refund-privacy" 
                 className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap ${
                   isActive('/refund-privacy') 
-                    ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                    : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50'
+                    ? activeNavClass
+                    : idleNavClass
                 }`}
               >
                 <Shield className="w-5 h-5" />
@@ -158,8 +162,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 to="/terms" 
                 className={`flex items-center space-x-2 px-4 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap ${
                   isActive('/terms') 
-                    ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                    : 'text-gray-700 hover:text-emerald-600 hover:bg-gray-50'
+                    ? activeNavClass
+                    : idleNavClass
                 }`}
               >
                 <FileText className="w-5 h-5" />
@@ -171,7 +175,7 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
             <div className="hidden lg:flex items-center space-x-4 min-w-0">
               <Link 
                 to="/support" 
-                className="flex items-center space-x-2 bg-gradient-to-r from-emerald-500 to-blue-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-emerald-600 hover:to-blue-600 transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 whitespace-nowrap"
+                className="flex items-center space-x-2 bg-gradient-to-r from-[#0a9f72] to-[#e78318] text-white px-6 py-3 rounded-xl font-semibold hover:from-[#087c4f] hover:to-[#c56a00] transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 whitespace-nowrap"
               >
                 <Phone className="w-5 h-5" />
                 <span>Contact Us</span>
@@ -202,8 +206,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 to="/" 
                 className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 ${
                   isActive('/') 
-                    ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? mobileActiveNavClass
+                    : mobileIdleNavClass
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -215,8 +219,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 to="/why-invest" 
                 className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 ${
                   isActive('/why-invest') 
-                    ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? mobileActiveNavClass
+                    : mobileIdleNavClass
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -230,10 +234,10 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 <div className="space-y-2 pl-4">
                   <Link 
                     to="/services/basic" 
-                    className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-emerald-50 transition-colors duration-200"
+                    className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#e7f7ec] transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <Award className="w-5 h-5 text-emerald-600" />
+                    <Award className="w-5 h-5 text-[#087c4f]" />
                     <div>
                       <div className="font-semibold text-gray-900">Basic Trading</div>
                       <div className="text-xs text-gray-500">Perfect for beginners</div>
@@ -241,10 +245,10 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                   </Link>
                   <Link 
                     to="/services/premium" 
-                    className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-blue-50 transition-colors duration-200"
+                    className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#fff3df] transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <BarChart3 className="w-5 h-5 text-blue-600" />
+                    <BarChart3 className="w-5 h-5 text-[#c56a00]" />
                     <div>
                       <div className="font-semibold text-gray-900">Premium Trading</div>
                       <div className="text-xs text-gray-500">Advanced features</div>
@@ -252,10 +256,10 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                   </Link>
                   <Link 
                     to="/hni-services" 
-                    className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-emerald-50 transition-colors duration-200"
+                    className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-[#e7f7ec] transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <DollarSign className="w-5 h-5 text-emerald-600" />
+                    <DollarSign className="w-5 h-5 text-[#087c4f]" />
                     <div>
                       <div className="font-semibold text-gray-900">HNI Services</div>
                       <div className="text-xs text-gray-500">Exclusive for HNIs</div>
@@ -268,8 +272,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 to="/about" 
                 className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 ${
                   isActive('/about') 
-                    ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? mobileActiveNavClass
+                    : mobileIdleNavClass
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -281,8 +285,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 to="/refund-privacy" 
                 className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 ${
                   isActive('/refund-privacy') 
-                    ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? mobileActiveNavClass
+                    : mobileIdleNavClass
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -294,8 +298,8 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
                 to="/terms" 
                 className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-300 ${
                   isActive('/terms') 
-                    ? 'bg-gradient-to-r from-emerald-50 to-blue-50 text-emerald-700 border border-emerald-200' 
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? mobileActiveNavClass
+                    : mobileIdleNavClass
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -306,7 +310,7 @@ const Header = ({ onMenuClick, showMenuButton = false }) => {
               <div className="pt-8 px-4">
                 <Link 
                   to="/support" 
-                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-500 to-blue-500 text-white px-6 py-4 rounded-xl font-semibold hover:from-emerald-600 hover:to-blue-600 transition-all duration-300 shadow-md"
+                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-[#0a9f72] to-[#e78318] text-white px-6 py-4 rounded-xl font-semibold hover:from-[#087c4f] hover:to-[#c56a00] transition-all duration-300 shadow-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Phone className="w-5 h-5" />
