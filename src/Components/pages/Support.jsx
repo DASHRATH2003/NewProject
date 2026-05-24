@@ -284,7 +284,7 @@ const Support = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Email Support</h4>
-                    <p className="text-gray-400">support@tradesmartly.co.in</p>
+                    <p className="text-gray-400">Renbeersaxena77@gmail.com</p>
                     <p className="text-gray-400 text-sm">Response within 24 hours</p>
                   </div>
                 </div>
@@ -324,7 +324,7 @@ const Support = () => {
                     // Create a sample PDF download
                     const link = document.createElement('a');
                     link.href = 'data:application/pdf;base64,JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PAovVGl0bGUgKFRyYWRpbmcgUGxhdGZvcm0gVXNlciBHdWlkZSkKL0NyZWF0b3IgKFRyYWRlU21hcnQpCi9Qcm9kdWNlciAoVHJhZGVTbWFydCBQREYgR2VuZXJhdG9yKQovQ3JlYXRpb25EYXRlIChEOjIwMjQwMTAxMTIwMDAwKQo+PgplbmRvYmoKMiAwIG9iago8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgMyAwIFIKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL1R5cGUgL1BhZ2VzCi9LaWRzIFs0IDAgUl0KL0NvdW50IDEKPD4KZW5kb2JqCjQgMCBvYmoKPDwKL1R5cGUgL1BhZ2UKL1BhcmVudCAzIDAgUgovTWVkaWFCb3ggWzAgMCA2MTIgNzkyXQovQ29udGVudHMgNSAwIFIKPj4KZW5kb2JqCjUgMCBvYmoKPDwKL0xlbmd0aCAyNDQKPj4Kc3RyZWFtCkJUCi9GMSAxMiBUZgo1MCA3NTAgVGQKKFRyYWRpbmcgUGxhdGZvcm0gVXNlciBHdWlkZSkgVGoKMCAtNTAgVGQKKFdlbGNvbWUgdG8gVHJhZGVTbWFydCEpIFRqCjAgLTMwIFRkCihUaGlzIGd1aWRlIHdpbGwgaGVscCB5b3UgZ2V0IHN0YXJ0ZWQgd2l0aCBvdXIgdHJhZGluZyBwbGF0Zm9ybS4pIFRqCjAgLTMwIFRkCihGb3IgbW9yZSBpbmZvcm1hdGlvbiwgdmlzaXQgb3VyIHN1cHBvcnQgc2VjdGlvbi4pIFRqCkVUCmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAxNzQgMDAwMDAgbiAKMDAwMDAwMDIyMSAwMDAwMCBuIAowMDAwMDAwMjc4IDAwMDAwIG4gCjAwMDAwMDAzNzggMDAwMDAgbiAKdHJhaWxlcgo8PAovU2l6ZSA2Ci9Sb290IDIgMCBSCj4+CnN0YXJ0eHJlZgo2NzIKJSVFT0Y=';
-                    link.download = 'TradeSmart-User-Guide.pdf';
+                    link.download = 'ArthaVeda-User-Guide.pdf';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);

@@ -91,7 +91,7 @@ const Payment = () => {
         key: import.meta.env.VITE_RAZORPAY_KEY_ID || 'rzp_test_your_key_here',
         amount: orderData.amount,
         currency: orderData.currency,
-        name: 'TradeSmart',
+        name: 'ArthaVeda Research',
         description: `${serviceNames[paymentData.service]} - ${paymentData.plan} plan`,
         order_id: orderData.id,
         handler: async function (response) {

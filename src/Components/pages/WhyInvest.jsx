@@ -117,7 +117,7 @@ const WhyInvest = () => {
       `}</style>
 
       {/* Hero Section with Parallax */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] flex items-center justify-start overflow-hidden">
         {/* Background Image with Parallax */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -129,17 +129,17 @@ const WhyInvest = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/90"></div>
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left w-full">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Why Invest with
             <span className="block bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent mt-2">
               ArthaVeda Research?
             </span>
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl">
             Unlock the potential of smart investing with cutting-edge research, disciplined risk management, and 10+ years of proven market expertise.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <button 
               onClick={openContactModal}
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-semibold hover:from-emerald-600 hover:to-blue-600 transition-all duration-300 hover:shadow-2xl hover:scale-105"
@@ -191,11 +191,11 @@ const WhyInvest = () => {
       {/* Core Benefits */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8">
+          <div className="text-left mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Your <span className="text-emerald-600">Investment Advantage</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl">
               Discover why thousands of investors choose ArthaVeda Research to grow their wealth with confidence
             </p>
           </div>
@@ -227,9 +227,9 @@ const WhyInvest = () => {
               <div 
                 key={index}
                 ref={el => sectionRefs.current[index + 4] = el}
-                className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 opacity-0"
+                className={`group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 opacity-0 ${index === 1 ? 'bg-blue-50' : 'bg-white'}`}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className={`relative h-48 overflow-hidden ${index === 1 ? 'bg-blue-50' : ''}`}>
                   <img 
                     src={benefit.image} 
                     alt={benefit.title}
@@ -242,7 +242,7 @@ const WhyInvest = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-6 bg-white">
+                <div className={`p-6 ${index === 1 ? 'bg-blue-50' : 'bg-white'}`}>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
                   <p className="text-gray-600">{benefit.description}</p>
                 </div>
@@ -289,25 +289,7 @@ const WhyInvest = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start opacity-0" ref={el => sectionRefs.current[9] = el}>
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                    <PieChart className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Mutual Funds & SIP</h3>
-                    <p className="text-gray-600">
-                      Systematic Investment Plans in carefully selected mutual funds to build wealth over time.
-                    </p>
-                    <ul className="mt-3 space-y-2">
-                      {["Diversified Portfolio", "Regular Monitoring", "Tax Efficient Planning"].map((item, i) => (
-                        <li key={i} className="flex items-center text-gray-700">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+               
               </div>
             </div>
 
@@ -329,11 +311,11 @@ const WhyInvest = () => {
       {/* Why Indian Market */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8">
+          <div className="text-left mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Why <span className="text-emerald-600">Indian Stock Market?</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl">
               India presents unique opportunities for investors with its dynamic economy and growth potential
             </p>
           </div>
@@ -365,7 +347,7 @@ const WhyInvest = () => {
               <div 
                 key={index}
                 ref={el => sectionRefs.current[index + 11] = el}
-                className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 opacity-0"
+                className={`group rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 opacity-0 ${index === 1 ? 'bg-blue-50' : 'bg-white'}`}
               >
                 <div className="relative h-48 overflow-hidden">
                   <img 
@@ -380,7 +362,7 @@ const WhyInvest = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
+                <div className={`p-6 ${index === 1 ? 'bg-blue-50' : ''}`}>
                   <div className="flex items-center mb-4">
                     <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-lg flex items-center justify-center mr-3">
                       <item.icon className="w-5 h-5 text-white" />

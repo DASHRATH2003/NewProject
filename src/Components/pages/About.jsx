@@ -98,9 +98,9 @@ const About = () => {
       </section>
 
       {/* Company Overview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 mt-12 relative z-10">
+      <section className="py-14 px-4 sm:px-6 lg:px-8 mt-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid lg:grid-cols-2 gap-10 items-center mb-12">
             <div>
               <div className="inline-flex items-center mb-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-xl flex items-center justify-center mr-3">
@@ -144,7 +144,7 @@ const About = () => {
                 <img 
                   src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                   alt="ArthaVeda Research Team"
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-[360px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -156,10 +156,10 @@ const About = () => {
           </div>
 
           {/* Mission & Vision */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             <div 
               ref={el => sectionRefs.current[1] = el}
-              className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-8 rounded-2xl border border-emerald-200 shadow-xl opacity-0"
+              className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 rounded-2xl border border-emerald-200 shadow-xl opacity-0"
             >
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-xl flex items-center justify-center mr-4">
@@ -175,7 +175,7 @@ const About = () => {
 
             <div 
               ref={el => sectionRefs.current[2] = el}
-              className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200 shadow-xl opacity-0"
+              className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl border border-blue-200 shadow-xl opacity-0"
             >
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl flex items-center justify-center mr-4">
@@ -194,9 +194,9 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our <span className="text-emerald-600">Core Values</span>
             </h2>
@@ -268,7 +268,7 @@ const About = () => {
      
 
       {/* Company Stats */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-600 via-blue-600 to-emerald-600">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-600 via-blue-600 to-emerald-600">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             {[
@@ -294,9 +294,9 @@ const About = () => {
       </section>
 
       {/* Technology Edge */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Our <span className="text-emerald-600">Technology Edge</span>
@@ -354,13 +354,13 @@ const About = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Join Our <span className="text-emerald-600">Success Story</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
-            Experience the difference with TradeSmart's professional trading solutions and expert guidance
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Experience the difference with ArthaVeda Research's professional trading solutions and expert guidance
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
