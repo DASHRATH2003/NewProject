@@ -284,7 +284,7 @@ const Support = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Email Support</h4>
-                    <p className="text-gray-400">Renbeersaxena77@gmail.com</p>
+                    <p className="text-gray-400">support@arthavedareasearch.com</p>
                     <p className="text-gray-400 text-sm">Response within 24 hours</p>
                   </div>
                 </div>
